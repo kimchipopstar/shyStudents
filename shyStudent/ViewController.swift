@@ -97,6 +97,7 @@ class ViewController: UIViewController {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
+    
 
 }
 

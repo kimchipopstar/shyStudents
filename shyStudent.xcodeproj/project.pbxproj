@@ -13,7 +13,8 @@
 		4D1FA67C1F48FF0400F8225C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67A1F48FF0400F8225C /* Main.storyboard */; };
 		4D1FA67E1F48FF0400F8225C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67D1F48FF0400F8225C /* Assets.xcassets */; };
 		4D1FA6811F48FF0400F8225C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */; };
-		4D1FA6891F49007D00F8225C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA6881F49007D00F8225C /* GoogleService-Info.plist */; };
+		4D1FA6AB1F4A7D2800F8225C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */; };
+		4D1FA6AD1F4B982D00F8225C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		4D1FA67D1F48FF0400F8225C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D1FA6801F48FF0400F8225C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D1FA6821F48FF0400F8225C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D1FA6881F49007D00F8225C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8369DB330A3159BE08F2AD7D /* Pods-shyStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,10 +76,11 @@
 			children = (
 				4D1FA6761F48FF0400F8225C /* AppDelegate.swift */,
 				4D1FA6781F48FF0400F8225C /* ViewController.swift */,
+				4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */,
 				4D1FA67A1F48FF0400F8225C /* Main.storyboard */,
 				4D1FA67D1F48FF0400F8225C /* Assets.xcassets */,
 				4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */,
-				4D1FA6881F49007D00F8225C /* GoogleService-Info.plist */,
+				4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */,
 				4D1FA6821F48FF0400F8225C /* Info.plist */,
 			);
 			path = shyStudent;
@@ -154,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1FA6811F48FF0400F8225C /* LaunchScreen.storyboard in Resources */,
-				4D1FA6891F49007D00F8225C /* GoogleService-Info.plist in Resources */,
+				4D1FA6AB1F4A7D2800F8225C /* GoogleService-Info.plist in Resources */,
 				4D1FA67E1F48FF0400F8225C /* Assets.xcassets in Resources */,
 				4D1FA67C1F48FF0400F8225C /* Main.storyboard in Resources */,
 			);
@@ -172,12 +175,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1FA6791F48FF0400F8225C /* ViewController.swift in Sources */,
+				4D1FA6AD1F4B982D00F8225C /* ChatViewController.swift in Sources */,
 				4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +396,7 @@
 				4D1FA6871F48FF0400F8225C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
