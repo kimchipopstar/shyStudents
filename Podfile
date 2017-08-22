@@ -10,6 +10,7 @@ target 'shyStudent' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod ‘Firebase/Database’
+pod ‘JSQMessagesViewController’
 
 
 end

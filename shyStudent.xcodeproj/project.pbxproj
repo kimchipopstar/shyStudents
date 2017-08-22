@@ -15,6 +15,8 @@
 		4D1FA6811F48FF0400F8225C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */; };
 		4D1FA6AB1F4A7D2800F8225C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */; };
 		4D1FA6AD1F4B982D00F8225C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */; };
+		4D4872261F4BEEF700518500 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872251F4BEEF700518500 /* Channel.swift */; };
+		4D4872281F4BF47F00518500 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872271F4BF47F00518500 /* CreateChannelCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		4D1FA6821F48FF0400F8225C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4D4872251F4BEEF700518500 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		4D4872271F4BF47F00518500 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		8369DB330A3159BE08F2AD7D /* Pods-shyStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1FA6751F48FF0400F8225C /* shyStudent */,
+				4D4872201F4BECF600518500 /* SupportingFile */,
 				4D1FA6741F48FF0400F8225C /* Products */,
 				3B1560C2C4E3681B584E0BEA /* Pods */,
 				6C62CD113C01032A3F4C12EC /* Frameworks */,
@@ -74,16 +79,51 @@
 		4D1FA6751F48FF0400F8225C /* shyStudent */ = {
 			isa = PBXGroup;
 			children = (
-				4D1FA6761F48FF0400F8225C /* AppDelegate.swift */,
+				4D4872241F4BEEC600518500 /* Model */,
+				4D48721F1F4BECDB00518500 /* viewController */,
 				4D1FA6781F48FF0400F8225C /* ViewController.swift */,
 				4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */,
-				4D1FA67A1F48FF0400F8225C /* Main.storyboard */,
-				4D1FA67D1F48FF0400F8225C /* Assets.xcassets */,
-				4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */,
-				4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */,
-				4D1FA6821F48FF0400F8225C /* Info.plist */,
+				4D4872211F4BED1500518500 /* MainStoryBoard */,
 			);
 			path = shyStudent;
+			sourceTree = "<group>";
+		};
+		4D48721F1F4BECDB00518500 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = viewController;
+			sourceTree = "<group>";
+		};
+		4D4872201F4BECF600518500 /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				4D1FA6821F48FF0400F8225C /* Info.plist */,
+				4D1FA67D1F48FF0400F8225C /* Assets.xcassets */,
+				4D1FA6761F48FF0400F8225C /* AppDelegate.swift */,
+				4D1FA6AA1F4A7D2800F8225C /* GoogleService-Info.plist */,
+				4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */,
+			);
+			name = SupportingFile;
+			path = shyStudent;
+			sourceTree = "<group>";
+		};
+		4D4872211F4BED1500518500 /* MainStoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4D1FA67A1F48FF0400F8225C /* Main.storyboard */,
+				4D4872271F4BF47F00518500 /* CreateChannelCell.swift */,
+			);
+			name = MainStoryBoard;
+			sourceTree = "<group>";
+		};
+		4D4872241F4BEEC600518500 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D4872251F4BEEF700518500 /* Channel.swift */,
+			);
+			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6C62CD113C01032A3F4C12EC /* Frameworks */ = {
@@ -175,6 +215,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -182,6 +224,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -231,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1FA6791F48FF0400F8225C /* ViewController.swift in Sources */,
+				4D4872261F4BEEF700518500 /* Channel.swift in Sources */,
 				4D1FA6AD1F4B982D00F8225C /* ChatViewController.swift in Sources */,
 				4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */,
+				4D4872281F4BF47F00518500 /* CreateChannelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
