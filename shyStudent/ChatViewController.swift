@@ -22,11 +22,13 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     private var channelRefHandel: DatabaseHandle?
     
     // MARK: Properties
-    var senderDisplayName: String?
+    
+//    var senderDisplayName: String?
     var newChannelTextField: UITextField?
     private var channels: [Channel] = []
     
     // MARK: View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "CLASS"
@@ -42,18 +44,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
-        
-        
-        
-//        channels.append(Channel(id: "1", name: "Channel1"))
-//        channels.append(Channel(id: "2", name: "Channel2"))
-//        channels.append(Channel(id: "3", name: "Channel3"))
-//        tableView.reloadData()
-        
-        
-    }
 
+    }
+    
     // MARK: tableView DataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,7 +58,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             switch currentSection {
             case .createNewChannelSection:
                 return 1
-            
+                
             case .currentChannelsSection:
                 return channels.count
             }
@@ -95,14 +88,32 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == Section.currentChannelsSection.rawValue{
             let channel = channels[(indexPath as NSIndexPath).row]
+            
             self.performSegue(withIdentifier: "ShowChannel", sender: channel)
+            
         }
     }
+    
+    // MAKR: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let channel = sender as? Channel {
+            if let detailVC = segue.destination as? DetailViewController{
+                
+//                detailVC.senderDisplayName = senderDisplayName
+                detailVC.channel = channel
+                detailVC.channelRef = channelRef.child(channel.id)
+            }
+        }
+    }
+    
     
     // MARK: firebase methods
     
     private func observeChannels(){
-
+        
         channelRefHandel = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
@@ -113,19 +124,23 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 print("Error! Could not decode channel data")
             }
         })
-    
+        
     }
     
     // MAKR: action
+    
     @IBAction func createChannel(_ sender: UIButton) {
         
         if let name = newChannelTextField?.text {
-        
+            
             let newChannelRef = channelRef.childByAutoId()
+            
             let channelItem = ["name": name]
             
             newChannelRef.setValue(channelItem)
-        
+            
+            
+            
         }
         
     }
