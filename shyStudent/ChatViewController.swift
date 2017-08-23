@@ -55,6 +55,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    
     // MARK: tableView DataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
