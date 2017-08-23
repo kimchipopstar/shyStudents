@@ -56,9 +56,15 @@ class LoginController: UIViewController {
                 return
             }
 //            self.dismiss(animated: true, completion: nil)
+            
+            
+            // MARK: - Create Channel View Controller (ChatViewController)
             let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-            let channelVC = sb.instantiateInitialViewController()
-            self.navigationController?.show(channelVC!, sender: self)
+            guard let channelVC = sb.instantiateInitialViewController() as? ChatViewController else {
+                return //do some kind of error
+            }
+            channelVC.senderDisplayName = email;
+            self.navigationController?.show(channelVC, sender: self)
         }
     }
     
@@ -76,7 +82,6 @@ class LoginController: UIViewController {
             }
         
             let ref = Database.database().reference()
-//            let ref = Database.database().reference(fromURL:"https://midtermproj2018.firebaseio.com/" )
             let values = ["name": name, "email" :email]
             ref.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 if error != nil{
@@ -259,4 +264,5 @@ extension UIColor {
         self.init (red: r/255 , green: g/255, blue: b/255, alpha:1 )
     }
 }
+
 

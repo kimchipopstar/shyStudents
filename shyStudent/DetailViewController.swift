@@ -29,7 +29,6 @@ class DetailViewController: JSQMessagesViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.senderId = Auth.auth().currentUser?.uid
-        self.senderDisplayName = "Test";
     }
 
 
@@ -43,7 +42,7 @@ class DetailViewController: JSQMessagesViewController
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        //SENDING
+        //SENDING -> Firebase (under the child channel)
     }
 
     // MARK: - Navigation

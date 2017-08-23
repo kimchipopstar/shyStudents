@@ -18,7 +18,7 @@ enum Section: Int {
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    private lazy var channelRef: DatabaseReference = Database.database().reference()
+    private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
     private var channelRefHandel: DatabaseHandle?
     
     // MARK: Properties
