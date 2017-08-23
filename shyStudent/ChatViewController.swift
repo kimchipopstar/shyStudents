@@ -23,7 +23,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     // MARK: Properties
     
-//    var senderDisplayName: String?
+    var senderDisplayName: String?
     var newChannelTextField: UITextField?
     private var channels: [Channel] = []
     
@@ -104,7 +104,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if let channel = sender as? Channel {
             if let detailVC = segue.destination as? DetailViewController{
                 
-//                detailVC.senderDisplayName = senderDisplayName
+                detailVC.senderDisplayName = senderDisplayName
                 detailVC.channel = channel
                 detailVC.channelRef = channelRef.child(channel.id)
                 detailVC.title = channel.name
