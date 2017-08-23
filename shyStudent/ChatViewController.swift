@@ -80,6 +80,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         } else if (indexPath as NSIndexPath).section == Section.currentChannelsSection.rawValue{
             cell.textLabel?.text = channels[(indexPath as NSIndexPath).row].name
         }
+        
+        
         return cell
     }
     
@@ -105,6 +107,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
 //                detailVC.senderDisplayName = senderDisplayName
                 detailVC.channel = channel
                 detailVC.channelRef = channelRef.child(channel.id)
+                detailVC.title = channel.name
             }
         }
     }

@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     
-                    if let u = user
+                    if user != nil
                     {
                         self.performSegue(withIdentifier: "goToMainView", sender: self)
                     }
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                 
                 Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                     
-                    if let u = user
+                    if user != nil
                     {
                         self.performSegue(withIdentifier: "goToMainView", sender: self)
                     }
