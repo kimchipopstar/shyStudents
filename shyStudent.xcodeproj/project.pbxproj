@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04CCD41348F9C9949E89A60A /* Pods_shyStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 214EDC88726E6FA7188C58FD /* Pods_shyStudent.framework */; };
+		1154F5FF1F4D1E1900176245 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154F5FE1F4D1E1900176245 /* LoginController.swift */; };
 		4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6761F48FF0400F8225C /* AppDelegate.swift */; };
-		4D1FA6791F48FF0400F8225C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6781F48FF0400F8225C /* ViewController.swift */; };
 		4D1FA67C1F48FF0400F8225C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67A1F48FF0400F8225C /* Main.storyboard */; };
 		4D1FA67E1F48FF0400F8225C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67D1F48FF0400F8225C /* Assets.xcassets */; };
 		4D1FA6811F48FF0400F8225C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67F1F48FF0400F8225C /* LaunchScreen.storyboard */; };
@@ -18,7 +18,6 @@
 		4D4872261F4BEEF700518500 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872251F4BEEF700518500 /* Channel.swift */; };
 		4D4872281F4BF47F00518500 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872271F4BF47F00518500 /* CreateChannelCell.swift */; };
 		4D48722C1F4C22EF00518500 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D48722B1F4C22EF00518500 /* DetailViewController.swift */; };
-		4D4872321F4CCBB700518500 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872311F4CCBB700518500 /* LoginViewController.swift */; };
 		4D48729B1F4CEC5800518500 /* JSQMessagesAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D4872361F4CEC5800518500 /* JSQMessagesAssets.bundle */; };
 		4D48729C1F4CEC5800518500 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4872391F4CEC5800518500 /* JSQSystemSoundPlayer+JSQMessages.m */; };
 		4D48729D1F4CEC5800518500 /* NSBundle+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D48723B1F4CEC5800518500 /* NSBundle+JSQMessages.m */; };
@@ -71,10 +70,10 @@
 
 /* Begin PBXFileReference section */
 		05302467D6C7E28466A85E0C /* Pods-shyStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.debug.xcconfig"; sourceTree = "<group>"; };
+		1154F5FE1F4D1E1900176245 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		214EDC88726E6FA7188C58FD /* Pods_shyStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shyStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1FA6731F48FF0400F8225C /* shyStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shyStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1FA6761F48FF0400F8225C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D1FA6781F48FF0400F8225C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D1FA67B1F48FF0400F8225C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D1FA67D1F48FF0400F8225C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D1FA6801F48FF0400F8225C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		4D4872271F4BF47F00518500 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		4D48722B1F4C22EF00518500 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D48722D1F4CC46400518500 /* shyStudent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shyStudent-Bridging-Header.h"; sourceTree = "<group>"; };
-		4D4872311F4CCBB700518500 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D4872361F4CEC5800518500 /* JSQMessagesAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSQMessagesAssets.bundle; sourceTree = "<group>"; };
 		4D4872381F4CEC5800518500 /* JSQSystemSoundPlayer+JSQMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSQSystemSoundPlayer+JSQMessages.h"; sourceTree = "<group>"; };
 		4D4872391F4CEC5800518500 /* JSQSystemSoundPlayer+JSQMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSQSystemSoundPlayer+JSQMessages.m"; sourceTree = "<group>"; };
@@ -237,7 +235,7 @@
 		4D48721F1F4BECDB00518500 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				4D1FA6781F48FF0400F8225C /* ViewController.swift */,
+				1154F5FE1F4D1E1900176245 /* LoginController.swift */,
 				4D1FA6AC1F4B982D00F8225C /* ChatViewController.swift */,
 				4D48722B1F4C22EF00518500 /* DetailViewController.swift */,
 			);
@@ -247,7 +245,6 @@
 		4D4872201F4BECF600518500 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
-				4D4872311F4CCBB700518500 /* LoginViewController.swift */,
 				4D48722D1F4CC46400518500 /* shyStudent-Bridging-Header.h */,
 				4D1FA6761F48FF0400F8225C /* AppDelegate.swift */,
 				4D1FA6821F48FF0400F8225C /* Info.plist */,
@@ -603,11 +600,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4872AC1F4CEC5800518500 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
-				4D4872321F4CCBB700518500 /* LoginViewController.swift in Sources */,
 				4D4872A21F4CEC5800518500 /* UIView+JSQMessages.m in Sources */,
 				4D4872B91F4CEC5800518500 /* JSQMessagesCollectionView.m in Sources */,
 				4D4872AD1F4CEC5800518500 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
-				4D1FA6791F48FF0400F8225C /* ViewController.swift in Sources */,
 				4D4872BF1F4CEC5800518500 /* JSQMessagesComposerTextView.m in Sources */,
 				4D4872261F4BEEF700518500 /* Channel.swift in Sources */,
 				4D4872B21F4CEC5800518500 /* JSQMediaItem.m in Sources */,
@@ -615,6 +610,7 @@
 				4D4872B61F4CEC5800518500 /* JSQPhotoMediaItem.m in Sources */,
 				4D4872CA1F4CEC5800518500 /* README.md in Sources */,
 				4D4872AF1F4CEC5800518500 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
+				1154F5FF1F4D1E1900176245 /* LoginController.swift in Sources */,
 				4D4872B51F4CEC5800518500 /* JSQMessagesBubbleImage.m in Sources */,
 				4D4872C11F4CEC5800518500 /* JSQMessagesLabel.m in Sources */,
 				4D4872A61F4CEC5800518500 /* JSQMessagesAvatarImageFactory.m in Sources */,
@@ -774,12 +770,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = shyStudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.shyStudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "shyStudent/shyStudent-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -790,11 +788,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = shyStudent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.shyStudent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "shyStudent/shyStudent-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
