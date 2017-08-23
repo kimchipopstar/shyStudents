@@ -64,7 +64,7 @@ class LoginController: UIViewController {
                 return //do some kind of error
             }
             // not too sure if we want name or email here
-            channelVC.senderDisplayName = email;
+            channelVC.senderDisplayName = email
             self.navigationController?.show(channelVC, sender: self)
         }
     }

@@ -42,20 +42,12 @@ class DetailViewController: JSQMessagesViewController
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
+        observeMessages()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        
-//        addMessage(withId: "foo", name: "Mr.Bolt", text: "I am so fast!")
-//        
-//        addMessage(withId: senderId, name: "Me", text: "I bet I can run faster than you!")
-//        addMessage(withId: senderId, name: "Me", text: "I like to run!")
-//        
-//        finishReceivingMessage()
-//    }
     
     //MARK: collection view datasource and delegate
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+        print(messages[indexPath.item])
         return messages[indexPath.item]
     }
     
@@ -81,10 +73,7 @@ class DetailViewController: JSQMessagesViewController
     }
     
     // MARK: Firebase related methods
-    
-    
-    
-    
+
     // MARK: UI and User Interaction
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
@@ -126,6 +115,27 @@ class DetailViewController: JSQMessagesViewController
             cell.textView?.textColor = UIColor.black
         }
         return cell
+    }
+    
+    private func observeMessages() {
+        messageRef = channelRef!.child("messages")
+
+        let messageQuery = messageRef.queryLimited(toLast:25)
+        
+        newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
+            
+            let messageData = snapshot.value as! Dictionary<String, String>
+            
+            if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
+            
+                self.addMessage(withId: id, name: name, text: text)
+                
+            
+                self.finishReceivingMessage()
+            } else {
+                print("Error! Could not decode message data")
+            }
+        })
     }
     
     // MARK: UITextViewDelegate methods
