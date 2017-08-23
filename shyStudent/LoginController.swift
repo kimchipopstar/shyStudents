@@ -82,6 +82,8 @@ class LoginController: UIViewController {
                 return
             }
         
+    //Successfully authenticated user 
+            
             let ref = Database.database().reference()
             let values = ["name": name, "email" :email]
             ref.updateChildValues(values, withCompletionBlock: { (err, ref) in

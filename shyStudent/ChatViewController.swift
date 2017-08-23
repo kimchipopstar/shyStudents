@@ -32,10 +32,17 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         title = "CLASS"
         observeChannels()
         
+        
+     
+        
     }
+    
     
     deinit {
         if let refHandle = channelRefHandel {
