@@ -15,30 +15,24 @@ import JSQMessagesViewController
 
 class DetailViewController: JSQMessagesViewController
 {
-    @IBOutlet weak var userInputTxtFld: UITextField!
+
     var channelRef: DatabaseReference?
-    
     var channel: Channel? {
         didSet{
             title = channel?.name
         }
     }
+    var messages = [JSQMessage]()
     
-    var ref:DatabaseReference!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.senderId = Auth.auth().currentUser?.uid
     }
-
-
-    @IBAction func sendButton(_ sender: UIButton) {
-        
-        
-        let childRef = channelRef?.childByAutoId()
-        let values = ["text": userInputTxtFld.text!]
-        childRef?.updateChildValues(values)
-        
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+        return messages[indexPath.item]
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {

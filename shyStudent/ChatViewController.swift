@@ -18,6 +18,7 @@ enum Section: Int {
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
     private var channelRefHandel: DatabaseHandle?
     
@@ -69,6 +70,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let reuseIdentifier = (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue ? "NewChannel" : "ExistingChannel"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)

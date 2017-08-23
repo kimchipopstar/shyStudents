@@ -63,6 +63,7 @@ class LoginController: UIViewController {
             guard let channelVC = sb.instantiateInitialViewController() as? ChatViewController else {
                 return //do some kind of error
             }
+            // not too sure if we want name or email here
             channelVC.senderDisplayName = email;
             self.navigationController?.show(channelVC, sender: self)
         }
