@@ -20,7 +20,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
-    private var channelRefHandel: DatabaseHandle?
+    private var channelRefHandle: DatabaseHandle?
     
     // MARK: Properties
     
@@ -40,7 +40,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     deinit {
-        if let refHandle = channelRefHandel {
+        if let refHandle = channelRefHandle {
             channelRef.removeObserver(withHandle: refHandle)
         }
     }
@@ -116,11 +116,13 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     print("error yo")
                 }
             }
-            self.tableView.reloadData()
 
+            channels.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+            tableView.reloadData()
         }
     }
-    
     // MAKR: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -142,7 +144,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     private func observeChannels(){
         
-        channelRefHandel = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
+        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
             if let name = channelData["name"] as! String!, name.characters.count > 0 {
@@ -153,7 +155,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         })
         
-        channelRefHandel = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
+
+        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
             if let name = channelData["name"] as! String!, name.characters.count > 0 {
@@ -167,10 +170,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 print("Error! Could not decode channel data")
             }
         })
+
         
     }
     
-    
+
     // MAKR: action
     
     @IBAction func createChannel(_ sender: UIButton) {

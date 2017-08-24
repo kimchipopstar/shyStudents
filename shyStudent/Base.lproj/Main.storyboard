@@ -106,15 +106,15 @@
                                             <outlet property="newChannelNameField" destination="kzo-lo-Iba" id="153-Fz-493"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="ShW-Lo-UYn" rowHeight="32" style="IBUITableViewCellStyleDefault" id="m2z-lQ-GGD">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="32"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="ShW-Lo-UYn" rowHeight="129" style="IBUITableViewCellStyleDefault" id="m2z-lQ-GGD">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2z-lQ-GGD" id="YOZ-A3-tYB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ShW-Lo-UYn">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="31"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
