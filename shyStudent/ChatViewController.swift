@@ -120,6 +120,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
 
 
+            tableView.reloadData()
         }
     }
     
@@ -183,11 +184,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let channelItem = ["name": name]
             
             newChannelRef.setValue(channelItem)
-            
-            
-            
         }
-        
     }
 }
 
