@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 import JSQMessagesViewController
 import Photos
+import FirebaseStorage
+
 
 
 
@@ -49,10 +51,7 @@ class DetailViewController: JSQMessagesViewController
     private lazy var usersTypingQuery: DatabaseQuery =
         self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
     
-    
-    lazy var storageRef: StorageReference = Storage.storage().reference(forURL: "YOUR_URL_HERE")
-    
-    
+    lazy var storageRef: StorageReference = Storage.storage().reference(forURL: "gs://shystudent-2d453.appspot.com")
     
     //MARK: view lifecycle
     
