@@ -116,11 +116,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     print("error yo")
                 }
             }
-            channels.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+            self.tableView.reloadData()
 
-
-            tableView.reloadData()
         }
     }
     
@@ -161,7 +158,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let id = snapshot.key
             if let name = channelData["name"] as! String!, name.characters.count > 0 {
                 let myChannel = Channel(id: id, name: name)
-             //Remove channelData from self.channels
+                //Remove channelData from self.channels
                 if let index = self.channels.index(of:myChannel) {
                     self.channels.remove(at: index)
                 }
@@ -172,6 +169,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         })
         
     }
+    
     
     // MAKR: action
     
