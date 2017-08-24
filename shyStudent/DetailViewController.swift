@@ -13,6 +13,7 @@ import JSQMessagesViewController
 
 
 
+
 class DetailViewController: JSQMessagesViewController
 {
     //MARK: properties
@@ -47,7 +48,6 @@ class DetailViewController: JSQMessagesViewController
     
     private lazy var usersTypingQuery: DatabaseQuery =
         self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
-    
     
     
     //MARK: view lifecycle
@@ -188,6 +188,5 @@ class DetailViewController: JSQMessagesViewController
             self.scrollToBottom(animated: true)
         }
     }
-
-
 }
+

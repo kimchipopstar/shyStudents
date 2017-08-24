@@ -25,7 +25,7 @@ class LoginController: UIViewController {
     lazy var loginRegisterButton : UIButton = {
         let button = UIButton(type:.system)
         button.backgroundColor = UIColor.gray
-        button.setTitle("Register", for: UIControlState.normal)
+        button.setTitle("Register", for: UIControlState())
         button.setTitleColor(UIColor.white, for: UIControlState.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
@@ -163,8 +163,11 @@ class LoginController: UIViewController {
     func handleLoginRegisterChange() {
         
        let title = loginOrRegisterSegmentedControl.titleForSegment(at: loginOrRegisterSegmentedControl.selectedSegmentIndex)
+
         loginRegisterButton.setTitle(title, for: UIControlState())
-        
+    
+       loginRegisterButton.setTitle(title, for: UIControlState.normal)
+
     //Changing heigh of inputscontainer if we change to login
     inputsContainerViewHeightAnchor?.constant = loginOrRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
         
