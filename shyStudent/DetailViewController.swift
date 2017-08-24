@@ -45,6 +45,9 @@ class DetailViewController: JSQMessagesViewController
         }
     }
     
+    private lazy var usersTypingQuery: DatabaseQuery =
+        self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
+    
     
     
     //MARK: view lifecycle
@@ -168,9 +171,22 @@ class DetailViewController: JSQMessagesViewController
     }
     
     private func observeTyping(){
+        
         let typingIndecatorRef = channelRef!.child("typingIndicator")
+        
         userIsTypingRef = typingIndecatorRef.child(senderId)
+        
         userIsTypingRef.onDisconnectRemoveValue()
+        
+        usersTypingQuery.observe(.value) { (data: DataSnapshot) in
+
+            if data.childrenCount == 1 && self.isTyping {
+                return
+            }
+            self.showTypingIndicator = data.childrenCount > 0
+            
+            self.scrollToBottom(animated: true)
+        }
     }
 
 
