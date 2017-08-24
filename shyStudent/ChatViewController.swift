@@ -109,8 +109,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            channels.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
             let key = channels[(indexPath as NSIndexPath).row].id
             print(key)
             channelRef.child(key).removeValue { (error, ref) in
@@ -118,6 +116,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     print("error yo")
                 }
             }
+            channels.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+
+
         }
     }
     
