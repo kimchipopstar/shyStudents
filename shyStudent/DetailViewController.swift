@@ -28,12 +28,27 @@ class DetailViewController: JSQMessagesViewController
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
     private lazy var messageRef: DatabaseReference = self.channelRef!.child("messages")
+    
     private var newMessageRefHandle: DatabaseHandle?
+    
+    private lazy var userIsTypingRef: DatabaseReference = self.channelRef!.child("typingIndicator").child(self.senderId)
+    
+    private var localTyping = false
+    
+    var isTyping: Bool{
+        get{
+            return localTyping
+        }
+        set {
+            localTyping = newValue
+            userIsTypingRef.setValue(newValue)
+        }
+    }
+    
+    
     
     //MARK: view lifecycle
     
-
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -45,7 +60,13 @@ class DetailViewController: JSQMessagesViewController
         observeMessages()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        observeTyping()
+    }
+    
     //MARK: collection view datasource and delegate
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         print(messages[indexPath.item])
         return messages[indexPath.item]
@@ -69,12 +90,13 @@ class DetailViewController: JSQMessagesViewController
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         
         finishSendingMessage()
-        //SENDING -> Firebase (under the child channel)
+        
+        isTyping = false
+
     }
     
-    // MARK: Firebase related methods
-
-    // MARK: UI and User Interaction
+    
+    // MAKR: collection view data source
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
@@ -95,16 +117,6 @@ class DetailViewController: JSQMessagesViewController
         }
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
-    }
-    
-    private func addMessage(withId id: String, name: String, text: String) {
-        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
-            messages.append(message)
-        }
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[indexPath.item]
@@ -116,6 +128,18 @@ class DetailViewController: JSQMessagesViewController
         }
         return cell
     }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        return nil
+    }
+    
+    private func addMessage(withId id: String, name: String, text: String) {
+        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+            messages.append(message)
+        }
+    }
+    
+    // MAKR: fire base
     
     private func observeMessages() {
         messageRef = channelRef!.child("messages")
@@ -138,8 +162,16 @@ class DetailViewController: JSQMessagesViewController
         })
     }
     
-    // MARK: UITextViewDelegate methods
+    override func textViewDidChange(_ textView: UITextView) {
+        super.textViewDidChange(textView)
+        isTyping = textView.text != ""
+    }
     
+    private func observeTyping(){
+        let typingIndecatorRef = channelRef!.child("typingIndicator")
+        userIsTypingRef = typingIndecatorRef.child(senderId)
+        userIsTypingRef.onDisconnectRemoveValue()
+    }
 
 
 }
