@@ -37,10 +37,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         title = "CLASS"
         observeChannels()
-        
-        
-     
-        
+
     }
     
     
