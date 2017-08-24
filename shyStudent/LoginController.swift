@@ -99,6 +99,7 @@ class LoginController: UIViewController {
         
     }
     
+  
     
     
     let nameTextField : UITextField = {
@@ -162,7 +163,11 @@ class LoginController: UIViewController {
     func handleLoginRegisterChange() {
         
        let title = loginOrRegisterSegmentedControl.titleForSegment(at: loginOrRegisterSegmentedControl.selectedSegmentIndex)
+
+        loginRegisterButton.setTitle(title, for: UIControlState())
+    
        loginRegisterButton.setTitle(title, for: UIControlState.normal)
+
     //Changing heigh of inputscontainer if we change to login
     inputsContainerViewHeightAnchor?.constant = loginOrRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
         
