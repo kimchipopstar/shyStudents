@@ -156,20 +156,20 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         })
         
 
-        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
-            let channelData = snapshot.value as! Dictionary<String, AnyObject>
-            let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 {
-                let myChannel = Channel(id: id, name: name)
-                //Remove channelData from self.channels
-                if let index = self.channels.index(of:myChannel) {
-                    self.channels.remove(at: index)
-                }
-                self.tableView.reloadData()
-            } else {
-                print("Error! Could not decode channel data")
-            }
-        })
+//        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
+//            let channelData = snapshot.value as! Dictionary<String, AnyObject>
+//            let id = snapshot.key
+//            if let name = channelData["name"] as! String!, name.characters.count > 0 {
+//                let myChannel = Channel(id: id, name: name)
+//                //Remove channelData from self.channels
+//                if let index = self.channels.index(of:myChannel) {
+//                    self.channels.remove(at: index)
+//                }
+//                self.tableView.reloadData()
+//            } else {
+//                print("Error! Could not decode channel data")
+//            }
+//        })
 
         
     }
