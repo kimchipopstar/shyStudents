@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import JSQMessagesViewController
+import Photos
 
 
 
@@ -44,6 +45,9 @@ class DetailViewController: JSQMessagesViewController
             userIsTypingRef.setValue(newValue)
         }
     }
+    
+    
+    lazy var storageRef: StorageReference = Storage.storage().reference(forURL: "YOUR_URL_HERE")
     
     
     

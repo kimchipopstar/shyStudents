@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035C974B5F0BFDA140647921 /* Pods_shyStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49706B015A7FAB5B4A020D95 /* Pods_shyStudent.framework */; };
 		1154F5FF1F4D1E1900176245 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154F5FE1F4D1E1900176245 /* LoginController.swift */; };
 		4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6761F48FF0400F8225C /* AppDelegate.swift */; };
 		4D1FA67C1F48FF0400F8225C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67A1F48FF0400F8225C /* Main.storyboard */; };
@@ -20,8 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05302467D6C7E28466A85E0C /* Pods-shyStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.debug.xcconfig"; sourceTree = "<group>"; };
+		11199F6E742AA478C13E9F74 /* Pods-shyStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.debug.xcconfig"; sourceTree = "<group>"; };
 		1154F5FE1F4D1E1900176245 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		49706B015A7FAB5B4A020D95 /* Pods_shyStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shyStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1FA6731F48FF0400F8225C /* shyStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shyStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1FA6761F48FF0400F8225C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1FA67B1F48FF0400F8225C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		4D4872271F4BF47F00518500 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		4D48722B1F4C22EF00518500 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D48722D1F4CC46400518500 /* shyStudent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shyStudent-Bridging-Header.h"; sourceTree = "<group>"; };
-		8369DB330A3159BE08F2AD7D /* Pods-shyStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.release.xcconfig"; sourceTree = "<group>"; };
+		F08F7DF667090CAD183BE348 /* Pods-shyStudent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.release.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,19 +44,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C974B5F0BFDA140647921 /* Pods_shyStudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B1560C2C4E3681B584E0BEA /* Pods */ = {
+		318AB38BE2617AAEFDC462C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				05302467D6C7E28466A85E0C /* Pods-shyStudent.debug.xcconfig */,
-				8369DB330A3159BE08F2AD7D /* Pods-shyStudent.release.xcconfig */,
+				11199F6E742AA478C13E9F74 /* Pods-shyStudent.debug.xcconfig */,
+				F08F7DF667090CAD183BE348 /* Pods-shyStudent.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3E9A467E8C92373635743048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49706B015A7FAB5B4A020D95 /* Pods_shyStudent.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4D1FA66A1F48FF0400F8225C = {
@@ -63,7 +74,8 @@
 				4D1FA6751F48FF0400F8225C /* shyStudent */,
 				4D4872201F4BECF600518500 /* SupportingFile */,
 				4D1FA6741F48FF0400F8225C /* Products */,
-				3B1560C2C4E3681B584E0BEA /* Pods */,
+				318AB38BE2617AAEFDC462C0 /* Pods */,
+				3E9A467E8C92373635743048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,12 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D1FA6851F48FF0400F8225C /* Build configuration list for PBXNativeTarget "shyStudent" */;
 			buildPhases = (
-				E1FE05CC48BE2DB128AA0AA6 /* [CP] Check Pods Manifest.lock */,
+				04C692A928FEF5D07EDC2F44 /* [CP] Check Pods Manifest.lock */,
 				4D1FA66F1F48FF0400F8225C /* Sources */,
 				4D1FA6701F48FF0400F8225C /* Frameworks */,
 				4D1FA6711F48FF0400F8225C /* Resources */,
-				15D8EABCE97185A804EF3DE8 /* [CP] Embed Pods Frameworks */,
-				160313F7E70E72BC6C21265F /* [CP] Copy Pods Resources */,
+				5BCDA59A0766841895801C9C /* [CP] Embed Pods Frameworks */,
+				F148F580668B86D7C502DCDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,7 +212,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15D8EABCE97185A804EF3DE8 /* [CP] Embed Pods Frameworks */ = {
+		04C692A928FEF5D07EDC2F44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shyStudent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BCDA59A0766841895801C9C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,7 +258,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		160313F7E70E72BC6C21265F /* [CP] Copy Pods Resources */ = {
+		F148F580668B86D7C502DCDA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,24 +271,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1FE05CC48BE2DB128AA0AA6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-shyStudent-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -394,7 +406,7 @@
 		};
 		4D1FA6861F48FF0400F8225C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05302467D6C7E28466A85E0C /* Pods-shyStudent.debug.xcconfig */;
+			baseConfigurationReference = 11199F6E742AA478C13E9F74 /* Pods-shyStudent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -412,7 +424,7 @@
 		};
 		4D1FA6871F48FF0400F8225C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8369DB330A3159BE08F2AD7D /* Pods-shyStudent.release.xcconfig */;
+			baseConfigurationReference = F08F7DF667090CAD183BE348 /* Pods-shyStudent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
