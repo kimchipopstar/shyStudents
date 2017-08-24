@@ -5,9 +5,9 @@
 //  Created by Jaewon Kim on 2017-08-21.
 //  Copyright © 2017 Jaewon Kim. All rights reserved.
 //
+import Foundation
 
-
-internal class Channel {
+class Channel: NSObject {
 
     internal let id: String
     internal let name: String
@@ -15,5 +15,8 @@ internal class Channel {
     init(id: String, name: String) {
         self.id = id
         self.name = name
+    }
+    static func ==(lhs: Channel, rhs: Channel) -> Bool {
+        return lhs.id == rhs.id
     }
 }
