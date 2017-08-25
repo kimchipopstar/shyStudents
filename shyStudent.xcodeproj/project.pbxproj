@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		035C974B5F0BFDA140647921 /* Pods_shyStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49706B015A7FAB5B4A020D95 /* Pods_shyStudent.framework */; };
 		1154F5FF1F4D1E1900176245 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154F5FE1F4D1E1900176245 /* LoginController.swift */; };
+		4D17B21E1F4FCD4B00A79189 /* ColorGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D17B21D1F4FCD4B00A79189 /* ColorGenerator.m */; };
+		4D17B21F1F4FD45F00A79189 /* shyStudent-Bridging-Header.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48722D1F4CC46400518500 /* shyStudent-Bridging-Header.h */; };
 		4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FA6761F48FF0400F8225C /* AppDelegate.swift */; };
 		4D1FA67C1F48FF0400F8225C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67A1F48FF0400F8225C /* Main.storyboard */; };
 		4D1FA67E1F48FF0400F8225C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FA67D1F48FF0400F8225C /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		11199F6E742AA478C13E9F74 /* Pods-shyStudent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shyStudent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shyStudent/Pods-shyStudent.debug.xcconfig"; sourceTree = "<group>"; };
 		1154F5FE1F4D1E1900176245 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		49706B015A7FAB5B4A020D95 /* Pods_shyStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shyStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D17B21C1F4FCD4B00A79189 /* ColorGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorGenerator.h; path = shyStudent/ColorGenerator.h; sourceTree = "<group>"; };
+		4D17B21D1F4FCD4B00A79189 /* ColorGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorGenerator.m; path = shyStudent/ColorGenerator.m; sourceTree = "<group>"; };
 		4D1FA6731F48FF0400F8225C /* shyStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shyStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1FA6761F48FF0400F8225C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1FA67B1F48FF0400F8225C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D17B21F1F4FD45F00A79189 /* shyStudent-Bridging-Header.h in Frameworks */,
 				035C974B5F0BFDA140647921 /* Pods_shyStudent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				4D4872251F4BEEF700518500 /* Channel.swift */,
+				4D17B21C1F4FCD4B00A79189 /* ColorGenerator.h */,
+				4D17B21D1F4FCD4B00A79189 /* ColorGenerator.m */,
 			);
 			name = Model;
 			path = ..;
@@ -286,6 +293,7 @@
 				4D48722C1F4C22EF00518500 /* DetailViewController.swift in Sources */,
 				4D1FA6771F48FF0400F8225C /* AppDelegate.swift in Sources */,
 				4D4872281F4BF47F00518500 /* CreateChannelCell.swift in Sources */,
+				4D17B21E1F4FCD4B00A79189 /* ColorGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

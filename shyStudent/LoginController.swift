@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 
 
+
 //protocol isStudentTeacher{
 //    
 //    func updateStudentTeacherSegmentedController(_ : int ) -> (Bool)()
@@ -21,8 +22,10 @@ import Firebase
 
 class LoginController: UIViewController {
     
+    
     var isStudent : Bool = false
     
+    var colorGenerator = ColorGenerator()
     
     
     
@@ -183,8 +186,10 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        view.backgroundColor = UIColor(r:66, g: 244, b: 188)
+        let customColor: UIColor = UIColor(r:66, g: 244, b: 188)
+        let colorGen = ColorGenerator()
+        colorGen.colorsArray.add(customColor)
+        view.backgroundColor = colorGen.randomColor();
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
         view.addSubview(loginOrRegisterSegmentedControl)
