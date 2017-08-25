@@ -45,6 +45,7 @@ class LoginController: UIViewController {
         button.setTitle("Register", for: UIControlState())
         button.setTitleColor(UIColor.white, for: UIControlState.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return button
     }()
@@ -88,7 +89,27 @@ class LoginController: UIViewController {
     }
     
     
+    let askLabel : UILabel = {
+        let label = UILabel()
+        label.text = "ASK"
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 80)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let awayLabel : UILabel = {
+        let label = UILabel()
+        label.text = "AWAY"
+        label.textColor = UIColor.white
+        label.font = label.font.withSize(70)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
+    
+    
+    
     func handleRegister() {
         guard let email = emailTextField.text , let password = passwordTextField.text , let name = nameTextField.text
             else {
@@ -194,8 +215,11 @@ class LoginController: UIViewController {
         view.addSubview(loginRegisterButton)
         view.addSubview(loginOrRegisterSegmentedControl)
         view.addSubview(studentTeacherSegmentedControl)
+        view.addSubview(askLabel)
+        view.addSubview(awayLabel)
         
         
+        setupLabelsConstraints()
         setupInputsContainerView()
         setupRegisterButtonView()
         setupLoginRegisterSegmentedControlConstraints()
@@ -310,7 +334,14 @@ class LoginController: UIViewController {
         
     }
     
-    
+    func setupLabelsConstraints(){
+    askLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+    awayLabel.bottomAnchor.constraint(equalTo: studentTeacherSegmentedControl.topAnchor, constant: -20).isActive = true
+    awayLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+    askLabel.bottomAnchor.constraint(equalTo: studentTeacherSegmentedControl.topAnchor, constant: -70).isActive = true
+        
+        
+    }
     
     
     func setupRegisterButtonView () {

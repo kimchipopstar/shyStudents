@@ -22,11 +22,13 @@
 }
 
 - (NSMutableArray<UIColor *>*) colors {
-    UIColor *redColor = [UIColor redColor];
-    UIColor *blueColor = [UIColor blueColor];
-    UIColor *yellowColor = [UIColor yellowColor];
+ 
+     UIColor *oneColor = [UIColor blueColor];
+     UIColor *secondColor = [UIColor darkGrayColor];
+     UIColor *thirdColor = [UIColor lightGrayColor];
+ 
     
-    NSMutableArray<UIColor*> *colorsArray = [[NSMutableArray alloc]initWithObjects:redColor,blueColor,yellowColor, nil];
+    NSMutableArray<UIColor*> *colorsArray = [[NSMutableArray alloc]initWithObjects:oneColor,secondColor,thirdColor, nil];
     
     return colorsArray;
 }
