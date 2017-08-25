@@ -154,25 +154,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 print("Error! Could not decode channel data")
             }
         })
-        
-        
-        //                if let index = self.channels.index(of:myChannel) {
-        //                    self.channels.remove(at: index)
-        //                      self.tableView.reloadData()
-        //                }
-        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
-            let channelData = snapshot.value as! Dictionary<String, AnyObject>
-            let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 {
-                let myChannel = Channel(id: id, name: name)
-                self.channels.remove(object: myChannel)
-                //Remove channelData from self.channels
-            } else {
-                print("Error! Could not decode channel data")
-            }
-        })
-    }
-    
+
 
     // MAKR: action
     
@@ -187,17 +169,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             newChannelRef.setValue(channelItem)
             
             newChannelTextField?.text = ""
-        }
-    }
-}
-
-extension Array where Element: Equatable {
-    
-    mutating func remove(object: Element) {
-        
-        if let index = index(of: object) {
-            
-            remove(at: index)
         }
     }
 }
