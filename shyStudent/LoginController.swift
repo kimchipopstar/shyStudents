@@ -20,14 +20,12 @@ import Firebase
 
 
 
-class LoginController: UIViewController {
+class LoginController: UIViewController , UITextFieldDelegate{
     
     
     var isStudent : Bool = false
     
     var colorGenerator = ColorGenerator()
-    
-    
     
     let inputsContainerView : UIView  = {
         
@@ -225,6 +223,10 @@ class LoginController: UIViewController {
         setupLoginRegisterSegmentedControlConstraints()
         setupStudentTeacherSegmentedControlConstraints()
         handleStudentTeacher()
+        
+        self.nameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     
         
     }
@@ -356,6 +358,18 @@ class LoginController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
     }
+    
+    // MARK : textfield delegate methods
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
 }
 

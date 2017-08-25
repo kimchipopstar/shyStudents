@@ -55,6 +55,7 @@ class DetailViewController: JSQMessagesViewController
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.inputToolbar.contentView.leftBarButtonItem = nil
         self.senderId = Auth.auth().currentUser?.uid
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
@@ -62,11 +63,12 @@ class DetailViewController: JSQMessagesViewController
         
         observeMessages()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         observeTyping()
     }
+    
     
     //MARK: collection view datasource and delegate
     

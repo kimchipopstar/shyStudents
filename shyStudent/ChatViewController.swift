@@ -15,7 +15,7 @@ enum Section: Int {
     case currentChannelsSection
 }
 
-class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     var isStudent = false
@@ -37,6 +37,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         observeChannels()
    
     }
+    
+    // MARK: textfield delegate
     
     
     deinit {
