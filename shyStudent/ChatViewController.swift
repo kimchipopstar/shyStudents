@@ -18,7 +18,7 @@ enum Section: Int {
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var isStudent = false
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
     private var channelRefHandle: DatabaseHandle?
     
@@ -35,7 +35,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         title = "CLASS"
         observeChannels()
-
+   
     }
     
     
@@ -62,17 +62,18 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 2
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let currentSection: Section = Section(rawValue: section){
-            switch currentSection {
-            case .createNewChannelSection:
-                return 1
-                
-            case .currentChannelsSection:
-                return channels.count
-            }
-        } else{
+        switch section {
+        case Section.createNewChannelSection.rawValue:
+            return isStudent ? 0 : 1
             
+        case Section.currentChannelsSection.rawValue:
+            return channels.count
+            
+        default:
             return 0
         }
     }
@@ -155,6 +156,35 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         })
 
+        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
+            let channelData = snapshot.value as! Dictionary<String, AnyObject>
+            let id = snapshot.key
+            if let name = channelData["name"] as! String!, name.characters.count > 0 {
+                for index in 0...(self.channels.count-1) {
+                    if self.channels[index].id == id {
+                        self.channels.remove(at: index)
+                    }
+                    
+                }
+
+                 self.tableView.reloadData()
+            } else {
+                print("Error! Could not decode channel data")
+            }
+        })
+
+        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
+            let channelData = snapshot.value as! Dictionary<String, AnyObject>
+            let id = snapshot.key
+            if let name = channelData["name"] as! String!, name.characters.count > 0 {
+                let myChannel = Channel(id: id, name: name)
+                self.channels.remove(object: myChannel)
+                //Remove channelData from self.channels
+            } else {
+                print("Error! Could not decode channel data")
+            }
+        })
+    }
 
     // MAKR: action
     
