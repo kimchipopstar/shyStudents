@@ -63,11 +63,12 @@ class DetailViewController: JSQMessagesViewController
         
         observeMessages()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         observeTyping()
     }
+    
     
     //MARK: collection view datasource and delegate
     

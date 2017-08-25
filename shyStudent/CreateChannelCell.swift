@@ -14,4 +14,6 @@ class CreateChannelCell: UITableViewCell {
     
     @IBOutlet weak var createChannelButton: UIButton!
     
+    
+    
 }
