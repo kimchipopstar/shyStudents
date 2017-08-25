@@ -10,7 +10,21 @@
 import UIKit
 import Firebase
 
+
+//protocol isStudentTeacher{
+//    
+//    func updateStudentTeacherSegmentedController(_ : int ) -> (Bool)()
+//    
+//}
+
+
+
 class LoginController: UIViewController {
+    
+    var isStudent : Bool = false
+    
+    
+    
     
     let inputsContainerView : UIView  = {
         
@@ -65,6 +79,7 @@ class LoginController: UIViewController {
             }
             // not too sure if we want name or email here
             channelVC.senderDisplayName = email
+            channelVC.isStudent = self.isStudent
             self.navigationController?.show(channelVC, sender: self)
         }
     }
@@ -138,6 +153,32 @@ class LoginController: UIViewController {
     }()
     
     
+    lazy var  studentTeacherSegmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Student" , "Teacher"])
+        segmentedControl.tintColor = UIColor.white
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.addTarget(self, action: #selector(handleStudentTeacher), for: .valueChanged)
+        segmentedControl.selectedSegmentIndex = 1
+        return segmentedControl
+    }()
+    
+  open func handleStudentTeacher() {
+        if studentTeacherSegmentedControl.selectedSegmentIndex == 0 {
+         //write code for deleting or hiding the create "classes" bar 
+            isStudent = true
+        }
+        if studentTeacherSegmentedControl.selectedSegmentIndex == 1 {
+          //do nothing
+            isStudent = false
+        }
+        else {
+            print("Form is invalid")
+        }
+    }
+    
+    
+    
+    
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,12 +188,15 @@ class LoginController: UIViewController {
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
         view.addSubview(loginOrRegisterSegmentedControl)
+        view.addSubview(studentTeacherSegmentedControl)
         
         
         setupInputsContainerView()
         setupRegisterButtonView()
         setupLoginRegisterSegmentedControlConstraints()
- 
+        setupStudentTeacherSegmentedControlConstraints()
+        handleStudentTeacher()
+    
         
     }
     
@@ -164,8 +208,7 @@ class LoginController: UIViewController {
         
        let title = loginOrRegisterSegmentedControl.titleForSegment(at: loginOrRegisterSegmentedControl.selectedSegmentIndex)
 
-        loginRegisterButton.setTitle(title, for: UIControlState())
-    
+       loginRegisterButton.setTitle(title, for: UIControlState())
        loginRegisterButton.setTitle(title, for: UIControlState.normal)
 
     //Changing heigh of inputscontainer if we change to login
@@ -195,6 +238,16 @@ class LoginController: UIViewController {
         loginOrRegisterSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginOrRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
+    }
+    
+    func setupStudentTeacherSegmentedControlConstraints() {
+        studentTeacherSegmentedControl.centerXAnchor.constraint(equalTo: inputsContainerView.centerXAnchor).isActive = true
+        studentTeacherSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+        studentTeacherSegmentedControl.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        studentTeacherSegmentedControl.bottomAnchor.constraint(equalTo: loginOrRegisterSegmentedControl.topAnchor, constant: -12).isActive = true
+        
+        
+        
     }
     
     
@@ -251,6 +304,9 @@ class LoginController: UIViewController {
         
         
     }
+    
+    
+    
     
     func setupRegisterButtonView () {
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
