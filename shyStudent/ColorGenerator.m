@@ -24,7 +24,7 @@
 - (NSMutableArray<UIColor *>*) colors {
     UIColor *redColor = [UIColor redColor];
     UIColor *blueColor = [UIColor blueColor];
-    UIColor *yellowColor = [UIColor yellowColor];
+    UIColor *yellowColor = [UIColor brownColor];
     
     NSMutableArray<UIColor*> *colorsArray = [[NSMutableArray alloc]initWithObjects:redColor,blueColor,yellowColor, nil];
     
@@ -32,7 +32,7 @@
 }
 
 -(UIColor*)randomColor{
-    int randomNumber = arc4random_uniform(self.colorsArray.count - 1);
+    int randomNumber = arc4random_uniform(self.colorsArray.count);
     UIColor *randomColor = self.colorsArray[randomNumber];
     return randomColor;
 }
