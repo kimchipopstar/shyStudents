@@ -159,29 +159,12 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 {
-                for index in 0...(self.channels.count-1) {
-                    if self.channels[index].id == id {
-                        self.channels.remove(at: index)
-                    }
-                    
+            
+            for var (index, channel) in self.channels.enumerated() {
+                if channel.id == id {
+                    self.channels.remove(at: index)
+                    self.tableView.reloadData();
                 }
-
-                 self.tableView.reloadData()
-            } else {
-                print("Error! Could not decode channel data")
-            }
-        })
-
-        channelRefHandle = channelRef.observe(.childRemoved, with: { (snapshot) -> Void in
-            let channelData = snapshot.value as! Dictionary<String, AnyObject>
-            let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 {
-                let myChannel = Channel(id: id, name: name)
-                self.channels.remove(object: myChannel)
-                //Remove channelData from self.channels
-            } else {
-                print("Error! Could not decode channel data")
             }
         })
     }
@@ -203,3 +186,13 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
 }
 
+extension Array where Element: Equatable {
+    
+    mutating func remove(object: Element) {
+        
+        if let index = index(of: object) {
+            
+            remove(at: index)
+        }
+    }
+}
